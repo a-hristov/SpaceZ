@@ -9,14 +9,6 @@ package ModelZ;
  * @version 2020-03-09
  */
 public class Calculations {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello World");
-	}
 	/**
 	 * TERMINAL VELOCITY
 	 * @param m = obj mass (kg)
