@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ModelZ","l":"Thrust"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ModelZ","l":"Calculations"},{"p":"ModelZ","l":"CircularOrbitalVelocity"},{"p":"Control","l":"ControlZ"},{"p":"ViewZ","l":"FrameZ"},{"p":"Main","l":"Main"},{"p":"ViewZ","l":"mainPanelZ"},{"p":"ModelZ","l":"TerminalVelocity"},{"p":"ModelZ","l":"Thrust"}]

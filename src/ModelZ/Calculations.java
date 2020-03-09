@@ -15,7 +15,7 @@ public class Calculations {
 	 * @param g = gravitation force (m/s)
 	 * @param p = atmosphheric pressure 
 	 * @param A = projected area (kg/m^3)
-	 * @param C = drag coefficients (m^2)
+	 * @param Cd = drag coefficients (m^2)
 	 * @return TERMINAL VELOCITY
 	 */
 	public double terminalVelocity(double m, double g, double p, double A, double Cd) {

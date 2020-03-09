@@ -17,7 +17,7 @@ import java.awt.*;
 public class mainPanelZ extends JPanel {
 	/**
 	 * Constructor for
-	 * @param c
+	 * @param c Control
 	 */
 	public mainPanelZ(ControlZ c) {
 		this.setLayout(new BorderLayout());
