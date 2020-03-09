@@ -116,7 +116,7 @@ public class TerminalVelocity {
 		return Vt;
 	}
 	/**
-	 * @param vt the vt to set
+	 * set Vt
 	 */
 	public void setVt() {
 		Vt = calculation();

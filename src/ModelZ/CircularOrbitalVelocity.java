@@ -1,5 +1,9 @@
 package ModelZ;
-
+/**
+ * Circulart Orbital Velocity
+ * @author Alexander Hristov
+ * @version 2020-03-09
+ */
 public class CircularOrbitalVelocity {
 	/**
 	 * ORBITAL SPEED EQUATION
@@ -17,9 +21,6 @@ public class CircularOrbitalVelocity {
 	}
 	/**
 	 * ORBITAL SPEED EQUATION
-	 * @param M mass of celestial body
-	 * @param R Celestial body radius
-	 * @param G Orbiter Height
 	 * @return ORBITAL SPEED EQUATION
 	 */
 	public double calculation() {
@@ -68,7 +69,7 @@ public class CircularOrbitalVelocity {
 		return V;
 	}
 	/**
-	 * @param v the v to set
+	 * set Velocity
 	 */
 	public void setV() {
 		V=calculation();

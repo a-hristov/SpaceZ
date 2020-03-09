@@ -4,8 +4,9 @@
 package ModelZ;
 
 /**
- * @author alexs
- *
+ * Thrust
+ * @author Alexander Hristov
+ * @version 2020-03-09
  */
 public class Thrust {
 	/**
@@ -116,7 +117,7 @@ public class Thrust {
 		return F;
 	}
 	/**
-	 * @param f the f to set
+	 * Set F
 	 */
 	public void setF() {
 		F=calculation();
