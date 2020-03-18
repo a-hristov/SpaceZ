@@ -20,7 +20,6 @@ public class mainPanelZ extends JPanel {
 	 * @param c Control
 	 */
 	public mainPanelZ(ControlZ c) {
-		this.setLayout(new BorderLayout());
-		
+		this.setLayout(new BorderLayout());		
 	}
 }

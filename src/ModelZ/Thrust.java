@@ -3,6 +3,13 @@
  */
 package ModelZ;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 /**
  * Thrust
  * @author Alexander Hristov
@@ -122,5 +129,40 @@ public class Thrust {
 	public void setF() {
 		F=calculation();
 	}
-	
+	/**
+	 * Save a Thrust Object
+	 * @param filename name of the file
+	 */
+	public void outputThrust(String filename) {
+		try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename))) {
+			outputStream.writeObject(this);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Load a Thrust Object
+	 * @param filename name of the file
+	 * @return the Thrust object
+	 */
+	public Thrust inputTerminalVelocity(String filename) {
+		Thrust tv = null;
+		try(ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename))) {
+			tv = (Thrust) inputStream.readObject();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tv;
+	}
 }

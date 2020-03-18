@@ -3,12 +3,18 @@
  */
 package ModelZ;
 
+import java.io.*;
+
 /**
  * Terminal Velocity
  * @author Alexander Hristov
  * @version 2020-03-09
  */
-public class TerminalVelocity {
+public class TerminalVelocity implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1056476679583300208L;
 	/**
 	 * TERMINAL VELOCITY
 	 *  m = obj mass (kg)
@@ -121,4 +127,40 @@ public class TerminalVelocity {
 	public void setVt() {
 		Vt = calculation();
 	}	
+	/**
+	 * Save a TerminalVelocity Object
+	 * @param filename name of the file
+	 */
+	public void outputTerminalVelocity(String filename) {
+		try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename))) {
+			outputStream.writeObject(this);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Load a TerminalVelocity Object
+	 * @param filename name of the file
+	 * @return the TerminalVelocity object
+	 */
+	public TerminalVelocity inputTerminalVelocity(String filename) {
+		TerminalVelocity tv = null;
+		try(ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename))) {
+			tv = (TerminalVelocity) inputStream.readObject();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tv;
+	}
 }

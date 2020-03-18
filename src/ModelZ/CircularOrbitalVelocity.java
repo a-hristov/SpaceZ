@@ -1,4 +1,12 @@
 package ModelZ;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 /**
  * Circulart Orbital Velocity
  * @author Alexander Hristov
@@ -74,5 +82,40 @@ public class CircularOrbitalVelocity {
 	public void setV() {
 		V=calculation();
 	}
-	
+	/**
+	 * Save a CircularOrbitalVelocity Object
+	 * @param filename name of the file
+	 */
+	public void outputCircularOrbitalVelocity(String filename) {
+		try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename))) {
+			outputStream.writeObject(this);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Load a CircularOrbitalVelocity Object
+	 * @param filename name of the file
+	 * @return the CircularOrbitalVelocity object
+	 */
+	public CircularOrbitalVelocity inputTerminalVelocity(String filename) {
+		CircularOrbitalVelocity tv = null;
+		try(ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename))) {
+			tv = (CircularOrbitalVelocity) inputStream.readObject();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tv;
+	}
 }
